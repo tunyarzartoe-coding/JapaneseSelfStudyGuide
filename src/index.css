@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+  margin: 0;
+  background-color: rgb(247, 247, 248);
 }
 .navbar {
   display: flex;
@@ -17,7 +19,7 @@ code {
   align-items: center;
   /* padding: 0 20px; */
   background-color: #f8f9fa;
-  height: 60px;
+  height: 100px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,11 +56,37 @@ code {
   text-decoration: none;
   color: #333;
 }
-
-.sidebar {
+/* Backdrop Styles */
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+
+/* main sidebar */
+.main_sidebar {
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 15px;
+  position: absolute;
+  /* top: 20; */
+  left: 0;
+  height: 75%;
+  width: 50px;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding-top: 60px; 
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
   height: 100%;
   width: 250px;
   background-color: #fff;
@@ -76,16 +104,16 @@ code {
   font-size: 24px;
 }
 
-.sidebar ul {
+.sidebar ul,.main_sidebar ul {
   list-style: none;
   padding: 0;
 }
 
-.sidebar ul li {
+.sidebar ul li, .main_sidebar ul li {
   padding: 15px 20px;
 }
 
-.sidebar ul li a {
+.sidebar ul li a,.main_sidebar ul li a {
   text-decoration: none;
   color: #333;
 }
@@ -118,11 +146,17 @@ code {
   .navbar__menu-btn {
     display: block;
   }
-
-  .navbar__search input {
-    width: 200px;
+  /* .main_sidebar{
+    display: none;
+  } */
+  .search {
+    width: 160px;
   }
 }
 .ms-n5 {
   margin-left: -40px;
 }
+.dropdown-menu{
+  min-width: 135px !important;
+}
+

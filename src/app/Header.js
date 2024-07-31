@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import Sidebar from "./Sidebar";
+import CategoriesContainer from "../containers/categories/CategoriesContainer";
 
 const Navbar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -10,6 +12,7 @@ const Navbar = () => {
   };
 
   return (
+    <>
     <header className="navbar">
       <div className="container">
         <div className="navbar__left">
@@ -17,10 +20,10 @@ const Navbar = () => {
             <h6>学習ガイド</h6>
           </Link>
         </div>
-        <div class="col-md-5 mx-auto">
+        <div class="col-md-5 mx-auto search">
           <div class="input-group">
             <input
-              class="form-control border-end-0 border rounded-pill mb-1"
+              class="form-control border-end-0 border rounded-pill "
               type="search"
               // value="search"
               placeholder="Serach ..."
@@ -37,7 +40,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar__right">
-          <div className="btn-group">
+          <div className="btn-group me-3">
             <div data-bs-toggle="dropdown" aria-expanded="false">
               <FaUserCircle size={30} /> Admin
             </div>
@@ -72,7 +75,8 @@ const Navbar = () => {
         <button className="navbar__menu-btn" onClick={toggleSidebar}>
           &#9776; {/* Hamburger icon */}
         </button>
-        {isSidebarOpen && (
+        {isSidebarOpen && (<>
+          <div className="backdrop"></div>
           <div className="sidebar">
             <button className="sidebar__close-btn" onClick={toggleSidebar}>
               &times;
@@ -92,9 +96,14 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
+          </>
         )}
       </div>
+      <CategoriesContainer/>
     </header>
+    {!isSidebarOpen && <Sidebar/>}
+    
+    </>
   );
 };
 
