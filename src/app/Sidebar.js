@@ -1,21 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
-    <div className=" main_sidebar">
+    <div className="main_sidebar">
       <ul className="sidebar__menu">
         <li>
-          <Link to="/" >ホーム</Link>
+          <NavLink exact to="/" activeClassName="active" className="sidebar__link">
+            ホーム
+          </NavLink>
         </li>
         <li>
-          <Link to="/beginner" >初心者</Link>
+          <NavLink to="/beginner" activeClassName="active" className="sidebar__link">
+            初心者
+          </NavLink>
         </li>
         <li>
-          <Link to="/intermediate" >中級</Link>
+          <NavLink to="/intermediate" activeClassName="active" className="sidebar__link">
+            中級
+          </NavLink>
         </li>
         <li>
-          <Link to="/advanced" >上級</Link>
+          <NavLink to="/advanced" activeClassName="active" className="sidebar__link">
+            上級
+          </NavLink>
         </li>
       </ul>
     </div>

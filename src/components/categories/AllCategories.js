@@ -19,7 +19,7 @@ const AllCategories = () => {
             className="category-btn"
             onClick={() => handleCategoryClick(category.id)}
             style={{
-              background: selectedCategory === category.id ? "#2d2d2d" : "#E0E0E0",
+              background: selectedCategory === category.id ? "#007bff" : "#E0E0E0",
               borderColor: "#eee",
               color: selectedCategory === category.id ? "#fff" : "#2d2d2d",
             }}
