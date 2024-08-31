@@ -19,7 +19,7 @@ const App = () => (
           <Route path="/advanced" element={<div>上級のページ</div>} />
         </Routes>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   </Router>
 );
