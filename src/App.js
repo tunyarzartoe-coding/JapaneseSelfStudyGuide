@@ -11,13 +11,14 @@ const App = () => (
     <Navbar />
     <div className="main-content">
       <Routes>
-        <Route path="/" exact component={Home} />
+        <Route path="/home" exact component={Home} />
         <Route path="/beginner" component={() => <div>初心者のページ</div>} />
         <Route path="/intermediate" component={() => <div>中級のページ</div>} />
         <Route path="/advanced" component={() => <div>上級のページ</div>} />
         {/* <Route path="/profile" component={Profile} /> */}
         </Routes>
     </div>
+    <Home/>
   </Router>
 );
 

@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Home = () => (
-  <div>
+  <section className='container'>
     <h1>ホームページ</h1>
     <p>ようこそ、日本語の学習ガイドへ！</p>
-  </div>
+  </section>
 );
 
 export default Home;
